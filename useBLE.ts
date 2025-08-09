@@ -172,7 +172,7 @@ function useBLE(): BluetoothLowEnergyApi {
   const sendOvenMessage = async (message: string) => {
     if (connectedDevice) {
       try {
-        bleManager.writeCharacteristicWithoutResponseForDevice(
+        bleManager.writeCharacteristicWithResponseForDevice(
           connectedDevice.id,
           OVEN_SERVICE_UUID,
           OVEN_WRITE_CHARACTERISTIC,
